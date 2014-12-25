@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>About TJ Acupuncture</title>
+		<meta charset="utf-8">
+		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link href="stylesheet.css" rel="stylesheet" type="text/css">
+		<link rel="icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<script>
+			$(document).ready(function() {
+				var content=document.getElementById('content');
+    	    	$(content).css("display", "none");
+    		});
+			function pgload(){
+				var content=document.getElementById('content');
+				$(content).fadeIn(500);
+			}
+		</script>
+		<meta name="description" content="Home of TJ Acupuncture, acupuncture you can trust. Serving the Portland, Oregon metro area.">
+		<!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="nav">
+				<div class="bar">
+					<ul class="navbar">
+						<li><a href="index.html"><span class="full"></span>HOME</a></li>
+						<li><a href="services.html"><span class="full"></span>SERVICES</a></li>
+						<li><a href="about.html"><span class="full"></span>ABOUT</a></li>
+						<li><a href="faq.html"><span class="full"></span>FAQ</a></li>
+						<li><a href="location.html"><span class="full"></span>LOCATION</a></li>
+						<li><a href="gallery.html"><span class="full"></span>GALLERY</a></li>
+						<li><a href="contact.html"><span class="full"></span>CONTACT</a></li>
+					</ul>
+				</div>
+				<div class="mobile-bar">
+					<a href="index.html"><img src="logo.png" class="mobilelogo"></img></a>
+					<button id="dropbutton" onclick="displaynav()"><img src="menu.svg" class="svgw" height="40px"></button>
+					<ul id="dropdown-bar">
+						<li><a href="index.html"><span class="full"></span>HOME</a></li>
+						<li><a href="services.html"><span class="full"></span>SERVICES</a></li>
+						<li><a href="about.html"><span class="full"></span>ABOUT</a></li>
+						<li><a href="faq.html"><span class="full"></span>FAQ</a></li>
+						<li><a href="location.html"><span class="full"></span>LOCATION</a></li>
+						<li><a href="gallery.html"><span class="full"></span>GALLERY</a></li>
+						<li><a href="contact.html"><span class="full"></span>CONTACT</a></li>
+					</ul>
+				</div>
+
+				<div class="content" id="content">
+					<br>
+					<p class="title">About Us</p>
+					<p class="subhead">Taiping</p>
+					<img src="resources\pics\taiping.JPG" width="185px" height="217px" class="tjselfie"></img>
+					<div class="right">
+						<p>Taiping Jia, a NCCAOM certified acupuncturist.</p>
+						<p>I have over 20 years experience in acupuncture and traditional Chinese medicine</p>
+						<p>You can reach me at <b><a href="mailto:taiping@tjacupuncture.com">taiping@tjacupuncture.com</a></b></p>
+						<p>Or by phone at 503-475-9657</p>
+					</div>
+					<br>
+					<p class="column subhead">Education</p>
+					<p>I graduated in 1985 from the Beijing University of Chinese Medicine, the most reputable Chinese medicine school in China. I have practiced Chinese Medicine at Beijing Hospital, one of the prestigious and highly regarded hospitals in China. While I was there, I was the senior attending physician of integrative (Chinese and Western) Medicine. During this time I specialized in internal medicine, especially digestive diseases, pulmonary diseases, endocrine and metabolic disorders.</p><br>
+					<p>As a NCCAOM certified and experienced acupuncturist and Chinese Herbologist, I am ready and excited to help you regain or maintain your health.</p>
+					<p class="subhead">Previous Experience</p>
+					<p>In addition to my work above, I have also worked at OCOM (Oregon College of Oriental Medicine) as a clinical supervisor.</p>
+					<p>I have also done extensive medical research for the University of Virginia and OHSU.</p>
+					<p class="subhead">Related Links</p>
+					<a href="http://bjhmoh.cn" target="_blank">Beijing Hospital</a><br>
+					<a href="http://www.bucm.edu.cn" target="_blank">Beijing University of Chinese Medicine</a><br>
+					<a href="http://bucmaaa.com" target="_blank">Chinese Medicine Alumni Association</a><br>
+					<a href="http://acupuncture.com" target="_blank">General Information</a><br>
+					<a href="http://nccam.nih.gov/" target="_blank">Government Information</a>
+				</div>
+				<div class="content footer">
+					<p><a href="http://goo.gl/uz657h" target="_blank">TJ Acupuncture, 7110 SW Fir Loop, Suite #205, Tigard, OR 97223 </a> <br> Phone: 503-475-9657 // Email: <a href="mailto:taiping@tjacupuncture.com">taiping@tjacupuncture.com</a></p>
+				</div>
+
+			</div>
+
+
+
+
+
+		</div>
+
+
+		<script>
+			window.onload=pgload;
+		</script>
+		<script>
+			var count=0;
+			function displaynav(){
+				var dropper=document.getElementById("dropdown-bar");
+				if (count==0){
+					$(dropper).slideDown(400);
+					count=1;
+				}
+				else{
+					$(dropper).slideUp(400);
+					count=0;
+				}
+			}
+		</script>
+
+	</body>
+
+
+</html>

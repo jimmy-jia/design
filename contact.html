@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contact TJ Acupuncture</title>
+		<meta charset="utf-8">
+		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link href="stylesheet.css" rel="stylesheet" type="text/css">
+		<link rel="icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<script>
+			$(document).ready(function() {
+				var content=document.getElementById('content');
+    	    	$(content).css("display", "none");
+    		});
+			function pgload(){
+				var content=document.getElementById('content');
+				$(content).fadeIn(500);
+			}
+		</script>
+		<meta name="description" content="Home of TJ Acupuncture, acupuncture you can trust. Serving the Portland, Oregon metro area.">
+		<!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="nav">
+				<div class="bar">
+					<ul class="navbar">
+						<li><a href="index.html"><span class="full"></span>HOME</a></li>
+						<li><a href="services.html"><span class="full"></span>SERVICES</a></li>
+						<li><a href="about.html"><span class="full"></span>ABOUT</a></li>
+						<li><a href="faq.html"><span class="full"></span>FAQ</a></li>
+						<li><a href="location.html"><span class="full"></span>LOCATION</a></li>
+						<li><a href="gallery.html"><span class="full"></span>GALLERY</a></li>
+						<li><a href="contact.html"><span class="full"></span>CONTACT</a></li>
+					</ul>
+				</div>
+				<div class="mobile-bar">
+					<a href="index.html"><img src="logo.png" class="mobilelogo"></img></a>
+					<button id="dropbutton" onclick="displaynav()"><img src="menu.svg" class="svgw" height="40px"></button>
+					<ul id="dropdown-bar">
+						<li><a href="index.html"><span class="full"></span>HOME</a></li>
+						<li><a href="services.html"><span class="full"></span>SERVICES</a></li>
+						<li><a href="about.html"><span class="full"></span>ABOUT</a></li>
+						<li><a href="faq.html"><span class="full"></span>FAQ</a></li>
+						<li><a href="location.html"><span class="full"></span>LOCATION</a></li>
+						<li><a href="gallery.html"><span class="full"></span>GALLERY</a></li>
+						<li><a href="contact.html"><span class="full"></span>CONTACT</a></li>
+					</ul>
+				</div>
+
+				<div class="content" id="content">
+					<p class="title" style="padding-top:20px">Contact US</p>
+					<p>Have any questions?</p>
+					<p>Feel free to email us at <b><a href="mailto:taiping@tjacupuncture.com">taiping@tjacupuncture.com</a></b></p>
+					<p>Call us at 503-475-9657</p>
+					<p>You may also contact us using this website form.</p>
+					<p>Please include your email in the provided "from" box so we can get back to you.</p>
+					<p>You may also include your phone number in the comments if you would like to be reached by phone.</p>
+					<div class="form">
+						<?php
+							function spamcheck($field) {
+							  $field=filter_var($field, FILTER_SANITIZE_EMAIL);
+							  if(filter_var($field, FILTER_VALIDATE_EMAIL)) {
+							    return TRUE;
+							  } else {
+							    return FALSE;
+							  }
+							}
+							?>
+							<p class="subhead">Feedback Form</p>
+							<?php
+							if (!isset($_POST["submit"])) {
+							  ?>
+							  <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+							  <br><input type="text" name="from" placeholder="From" class="text"><br>
+							  <br><input type="text" name="subject" placeholder="Subject" class="text"><br>
+							  <br><textarea rows="10" cols="40" name="message" placeholder="Message" class="text"></textarea><br>
+							  <input type="submit" name="submit" value="Send Message" class="input">
+							  </form>
+							  <?php 
+							} else { 
+							  if (isset($_POST["from"])) {
+							    $mailcheck = spamcheck($_POST["from"]);
+							    if ($mailcheck==FALSE) {
+							      echo "Invalid input";
+							    } else {
+							      $from = $_POST["from"];
+							      $subject = $_POST["subject"];
+							      $message = $_POST["message"];
+							      $message = wordwrap($message, 70);
+							      mail("jimmy.j.jia@gmail.com",$subject,$message,"From: $from\n");
+							      echo "Thank you for sending us feedback";
+							    }
+							  }
+							}
+						?>	
+				</div>
+
+
+
+			</div>
+				<div class="content footer">
+					<p><a href="http://goo.gl/uz657h" target="_blank">TJ Acupuncture, 7110 SW Fir Loop, Suite #205, Tigard, OR 97223 </a> <br> Phone: 503-475-9657 // Email: <a href="mailto:taiping@tjacupuncture.com">taiping@tjacupuncture.com</a></p>
+				</div>
+		</div>
+
+
+		<script>
+			window.onload=pgload;
+		</script>
+		<script>
+			var count=0;
+			function displaynav(){
+				var dropper=document.getElementById("dropdown-bar");
+				if (count==0){
+					$(dropper).slideDown(400);
+					count=1;
+				}
+				else{
+					$(dropper).slideUp(400);
+					count=0;
+				}
+			}
+		</script>
+
+	</body>
+
+
+</html>
